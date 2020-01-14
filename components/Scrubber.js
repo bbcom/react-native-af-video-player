@@ -33,7 +33,7 @@ const Scrubber = (props) => {
           onValueChange={val => onSeek(val)}
           onSlidingComplete={val => onSeekRelease(val)}
           value={progress === Number.POSITIVE_INFINITY ? 0 : progress}
-          thumbTintColor={theme.scrubberThumb}
+          //thumbTintColor={theme.scrubberThumb}
           thumbImage={thumbImage}
           //thumbStyle={styles.thumbStyle}
           //trackStyle={styles.trackStyle}
