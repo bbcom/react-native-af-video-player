@@ -33,11 +33,12 @@ const Scrubber = (props) => {
           onSlidingComplete={val => onSeekRelease(val)}
           value={progress === Number.POSITIVE_INFINITY ? 0 : progress}
           thumbTintColor={theme.scrubberThumb}
-          thumbStyle={styles.thumbStyle}
-          trackStyle={styles.trackStyle}
+          thumbImage={require('../assets/thumb.png')}
+          //thumbStyle={styles.thumbStyle}
+          //trackStyle={styles.trackStyle}
           minimumTrackTintColor={theme.scrubberBar}
           maximumTrackTintColor={trackColor}
-          trackClickable
+          //trackClickable
           disabled={seekLocked}
         />
     </View>
