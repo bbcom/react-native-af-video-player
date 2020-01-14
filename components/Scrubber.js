@@ -5,6 +5,7 @@ import {
   StyleSheet,
 } from 'react-native'
 import Slider from '@react-native-community/slider';
+const thumbImage = require('assets/thumb-blue-10x10.png');
 
 const styles = StyleSheet.create({
   container: {
@@ -33,7 +34,7 @@ const Scrubber = (props) => {
           onSlidingComplete={val => onSeekRelease(val)}
           value={progress === Number.POSITIVE_INFINITY ? 0 : progress}
           thumbTintColor={theme.scrubberThumb}
-          thumbImage={require('../assets/thumb-blue-10x10.png')}
+          thumbImage={thumbImage}
           //thumbStyle={styles.thumbStyle}
           //trackStyle={styles.trackStyle}
           minimumTrackTintColor={theme.scrubberBar}
