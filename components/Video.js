@@ -43,7 +43,7 @@ const defaultTheme = {
   center: '#FFF',
   fullscreen: '#FFF',
   volume: '#FFF',
-  scrubberThumb: '#FFF',
+  scrubberThumb: '#EE3A6A',
   scrubberBar: '#FFF',
   seconds: '#FFF',
   duration: '#FFF',
