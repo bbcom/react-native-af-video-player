@@ -5,7 +5,7 @@ import {
   StyleSheet,
 } from 'react-native'
 import Slider from '@react-native-community/slider';
-const thumbImage = require('../assets/thumb-blue-10x10.png');
+const thumbImage = require('../assets/thumb-white-15x15.png');
 
 const styles = StyleSheet.create({
   container: {
