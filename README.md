@@ -91,6 +91,7 @@ scrollBounce          | bool     | No       | false                     | Enable
 lockPortraitOnFsExit  | bool     | No       | false                     | Keep Portrait mode locked after Exiting from Fullscreen mode
 lockRatio             | number   | No       | undefined                 | Force a specific ratio to the Video player. e.g. lockRatio={16 / 9}
 onLoad                | function | No       | (data) => {}              | Returns data once video is loaded
+onLoaded              | function | No       | ({ duration }) => {}      | Returns video duration when video has been loaded
 onProgress            | function | No       | (progress) => {}          | Returns progress data
 onEnd                 | function | No       | () => {}                  | Invoked when video finishes playing  
 onError               | function | No       | (error) => {}             | Returns an error message argument

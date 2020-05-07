@@ -76,6 +76,14 @@ class Video extends Component {
     Dimensions.addEventListener('change', this.onRotated)
     BackHandler.addEventListener('hardwareBackPress', this.BackHandler)
   }
+  
+  componentDidUpdate(prevProps, prevState) {
+    const { loading, duration } = this.state;
+    
+    if (!loading && loading !== prevState.loading) {
+      this.props.onLoaded({ duration });
+    }
+  }
 
   componentWillUnmount() {
     Dimensions.removeEventListener('change', this.onRotated)
@@ -473,6 +481,7 @@ Video.propTypes = {
   lockPortraitOnFsExit: PropTypes.bool,
   onEnd: PropTypes.func,
   onLoad: PropTypes.func,
+  onLoaded: PropTypes.func,
   onPlay: PropTypes.func,
   onError: PropTypes.func,
   onProgress: PropTypes.func,
@@ -508,6 +517,7 @@ Video.defaultProps = {
   lockPortraitOnFsExit: false,
   onEnd: () => {},
   onLoad: () => {},
+  onLoaded: () => {},
   onPlay: () => {},
   onError: () => {},
   onProgress: () => {},
