@@ -510,6 +510,7 @@ Video.defaultProps = {
   loop: false,
   autoPlay: false,
   inlineOnly: false,
+  hideFullScreenControl: false,
   fullScreenOnly: false,
   playInBackground: false,
   playWhenInactive: false,

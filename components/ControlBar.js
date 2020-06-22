@@ -27,7 +27,7 @@ const ControlBar = (props) => {
     hideFullScreenControl,
     seekLocked
   } = props
-  const showFSToggle = (!inlineOnly || !hideFullScreenControl);
+  const showFSToggle = (!inlineOnly && !hideFullScreenControl);
 
   return (
     <LinearGradient colors={['rgba(0,0,0,0)', 'rgba(0,0,0,0.75)']} style={styles.container}>
