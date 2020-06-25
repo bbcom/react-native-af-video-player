@@ -176,11 +176,12 @@ class Controls extends Component {
   }
 
   render() {
-    if (this.props.loading) return this.loading()
-    if (this.state.hideControls) {
-      return this.hiddenControls()
-    }
-    return this.displayedControls()
+    const { loading, loaded } = this.props;
+    const { hideControls } = this.state;
+
+    if (loading || !loaded) return this.loading();
+    if (hideControls) return this.hiddenControls();
+    return this.displayedControls();
   }
 }
 

@@ -60,6 +60,7 @@ class Video extends Component {
       fullScreen: false,
       inlineHeight: Win.width * 0.5625,
       loading: false,
+      loaded: false,
       duration: 0,
       progress: 0,
       currentTime: 0,
@@ -95,21 +96,25 @@ class Video extends Component {
   }
 
   onLoadStart() {
-    this.setState({ paused: true, loading: true })
+    this.setState({ paused: true, loading: true, loaded: false })
   }
 
   onLoad(data) {
     if (!this.state.loading) return
+
     this.props.onLoad(data)
+
     const { height, width } = data.naturalSize
     const ratio = height === 'undefined' && width === 'undefined' ?
       (9 / 16) : (height / width)
     const inlineHeight = this.props.lockRatio ?
       ((this.props.playerWidth || Win.width) / this.props.lockRatio)
       : ((this.props.playerWidth || Win.width) * ratio)
+
     this.setState({
       paused: !this.props.autoPlay,
       loading: false,
+      loaded: true,
       inlineHeight,
       duration: data.duration
     }, () => {
@@ -344,6 +349,7 @@ class Video extends Component {
       paused,
       muted,
       loading,
+      loaded,
       progress,
       duration,
       inlineHeight,
@@ -427,6 +433,7 @@ class Video extends Component {
           muted={muted}
           fullscreen={fullScreen}
           loading={loading}
+          loaded={loaded}
           onSeek={val => this.seek(val)}
           onSeekRelease={pos => this.onSeekRelease(pos)}
           progress={progress}
