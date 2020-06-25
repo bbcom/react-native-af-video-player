@@ -82,7 +82,7 @@ class Controls extends Component {
       this.progressbar.setValue(2)
       Animated.parallel([
         Animated.timing(this.animControls, { toValue: 1, duration: 200 }),
-        Animated.timing(this.scale, { toValue: 1, duration: 200 })
+        Animated.timing(this.scale, { toValue: 1, duration: 200, useNativeDriver: true })
       ]).start()
     })
   }
@@ -90,7 +90,7 @@ class Controls extends Component {
   hideControls() {
     Animated.parallel([
       Animated.timing(this.animControls, { toValue: 0, duration: 200 }),
-      Animated.timing(this.scale, { toValue: 0.25, duration: 200 })
+      Animated.timing(this.scale, { toValue: 0.25, duration: 200, useNativeDriver: true })
     ]).start(() => this.setState({ hideControls: true, seconds: 0 }))
   }
 
@@ -176,11 +176,12 @@ class Controls extends Component {
   }
 
   render() {
-    if (this.props.loading) return this.loading()
-    if (this.state.hideControls) {
-      return this.hiddenControls()
-    }
-    return this.displayedControls()
+    const { loading, loaded } = this.props;
+    const { hideControls } = this.state;
+
+    if (loading || !loaded) return this.loading();
+    if (hideControls) return this.hiddenControls();
+    return this.displayedControls();
   }
 }
 
