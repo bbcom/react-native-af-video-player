@@ -187,7 +187,7 @@ class Video extends Component {
   onError(msg) {
     this.props.onError(msg)
     const { error } = this.props
-    this.setState({ renderError: true }, () => {
+    this.setState({ renderError: true, loading: false, loaded: false }, () => {
       let type
       switch (true) {
         case error === false:
