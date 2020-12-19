@@ -5,7 +5,7 @@ import {
   Platform,
   StyleSheet,
 } from 'react-native'
-import Slider from '@react-native-community/slider';
+import { Slider } from '@react-native-community/slider';
 const thumbImage = require('../assets/thumb-white-15x15.png');
 
 const styles = StyleSheet.create({
