@@ -1,6 +1,6 @@
 {
   "name": "react-native-af-video-player",
-  "version": "0.3.13-1",
+  "version": "0.3.13-2",
   "dependencies": {
     "@react-native-community/slider": "^4.0.0-rc.2",
     "react-native-keep-awake": "^4.0.0",
